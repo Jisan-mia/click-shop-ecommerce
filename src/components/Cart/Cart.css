@@ -1,0 +1,25 @@
+.cart-title {
+	text-align: center;
+	line-height: 10px;
+}
+.cart-pricing {
+	display: grid;
+	grid-template-columns: auto auto;
+	line-height: 1px;
+	text-align: justify;
+}
+.cart-pricing p:last-child {
+	color: red;
+}
+.review-btn {
+	width: 100%;
+	padding: 5px 35px;
+	background-color: rgb(248, 194, 45);
+	border: 1px solid rgba(245, 174, 51, 0.699);
+	/* outline: none; */
+	cursor: pointer;
+	border-radius: 2px;
+	box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.1);
+	font-size: 16px;
+	margin-top: 5px;
+}
