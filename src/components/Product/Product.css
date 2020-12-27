@@ -10,6 +10,7 @@
 
 .product {
 	padding: 9px;
+	background: rgba(255, 255, 255, 0.79);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -72,5 +73,14 @@
 	}
 	.buy-btn {
 		width: 100%;
+	}
+}
+
+@media (max-width: 500px) {
+	.features {
+		display: none;
+	}
+	.product {
+		padding: 15px 8px;
 	}
 }

@@ -1,35 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import logoImg from "../../images/success.png";
 import "./Header.css";
-import logo from "./img/logo.png";
-
 const Header = () => {
+	const [responsive, setResonsive] = useState(false);
+	const handleHamburger = () => {
+		setResonsive(!responsive);
+	};
 	return (
-		<div className="header">
-			{/* <div className="img-div">
-        <img src={logo} alt="logo" />
-      </div> */}
+		<div className="">
+			<nav>
+				<div className="nav-wrapper container">
+					<div className="nav-brand">
+						<img src={logoImg} alt="" />
+						<span>E-SHOP</span>
+					</div>
 
-			<div className="nav">
-				<div className="img-div">
-					<img src={logo} alt="logo" />
+					<div onClick={handleHamburger} class="hamburger">
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</div>
+
+					<ul className={responsive ? "nav-list" : "nav-list open"}>
+						<li className="nav-list-items">
+							<Link to="/shop">Shop</Link>
+						</li>
+						<li className="nav-list-items">
+							<Link to="/review">Review Order</Link>
+						</li>
+						<li className="nav-list-items">
+							<Link to="/inventory">Inventory</Link>
+						</li>
+						<li className="nav-list-items">
+							<Link to="/contact">Contact</Link>
+						</li>
+						<button class="btn login-btn">Login</button>
+					</ul>
 				</div>
-				<ul className="navbar">
-					<li>
-						<a href="/shop">Shop</a>
-					</li>
-					<li>
-						<a href="/review">Order Review</a>
-					</li>
-					<li>
-						<a href="/manage">Manage Inventroy</a>
-					</li>
-				</ul>
-			</div>
+			</nav>
 
-			<div className="search">
+			{/* <div className="search">
 				<input type="text" placeholder="Search here" />
 				<button className="search-btn">Search</button>
-			</div>
+			</div> */}
 		</div>
 	);
 };

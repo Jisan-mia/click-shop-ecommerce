@@ -16,11 +16,16 @@
 	padding: 38px 15px;
 	display: inline-table;
 	box-shadow: 0 0 15px 5px rgba(25, 55, 55, 0.1);
-	margin-top: 23px;
+	margin-top: 20px;
 }
 
 @media (max-width: 768px) {
 	.cart-container {
 		display: none;
+	}
+}
+@media (max-width: 500px) {
+	.product-container {
+		width: 100%;
 	}
 }

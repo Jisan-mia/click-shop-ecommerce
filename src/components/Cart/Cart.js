@@ -4,7 +4,7 @@ const Cart = (props) => {
 	const cart = props.cart;
 	// console.log(cart);
 	const subtotal = cart.reduce(
-		(subtotal, product) => subtotal + product.price,
+		(subtotal, product) => (subtotal + product.price) * product.quantity,
 		0
 	);
 
@@ -25,7 +25,7 @@ const Cart = (props) => {
 	// });
 
 	const beforetaxTotal = subtotal + shipping;
-	const tax = beforetaxTotal / 10;
+	const tax = beforetaxTotal / 30;
 	const grandTotal = subtotal + shipping + tax;
 
 	const formatNumber = (num) => {
@@ -51,7 +51,7 @@ const Cart = (props) => {
 				<p>$ {formatNumber(grandTotal)} </p>
 			</div>
 
-			<button className="review-btn">Review Order</button>
+			{props.children}
 		</div>
 	);
 };
