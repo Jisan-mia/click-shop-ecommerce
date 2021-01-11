@@ -78,6 +78,7 @@ nav {
 .login-btn:hover {
 	box-shadow: 0 0 26px 0px rgba(0, 0, 0, 0.1);
 	background-color: #5895e6bf;
+	color: white;
 }
 .nav-wrapper ul.nav-list li a:hover {
 	color: #c9daf0;

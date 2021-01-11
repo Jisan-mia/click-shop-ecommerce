@@ -5,35 +5,35 @@ const Contact = () => {
 		<div className="container py-2">
 			<div className="jumbotron">
 				<div className="py-1">
-					<form className="row g-3 needs-validation" novalidate>
+					<form className="row g-3 needs-validation">
 						<div className="col-md-4 py-2">
-							<label for="validationCustom01" className="form-label">
+							<label htmlFor="validationCustom01" className="form-label">
 								First name
 							</label>
 							<input
 								type="text"
 								className="form-control"
 								id="validationCustom01"
-								value="Mark"
+								placeholder="Your first name"
 								required
 							/>
 							<div className="valid-feedback">Looks good!</div>
 						</div>
 						<div className="col-md-4 py-2">
-							<label for="validationCustom02" className="form-label">
+							<label htmlFor="validationCustom02" className="form-label">
 								Last name
 							</label>
 							<input
 								type="text"
 								className="form-control"
 								id="validationCustom02"
-								value="Otto"
+								placeholder="Your last name"
 								required
 							/>
 							<div className="valid-feedback">Looks good!</div>
 						</div>
 						<div className="col-md-4 py-2">
-							<label for="validationCustomUsername" className="form-label">
+							<label htmlFor="validationCustomUsername" className="form-label">
 								Username
 							</label>
 							<div className="input-group has-validation">
@@ -53,7 +53,7 @@ const Contact = () => {
 							</div>
 						</div>
 						<div className="col-md-6 py-2">
-							<label for="validationCustom03" className="form-label">
+							<label htmlFor="validationCustom03" className="form-label">
 								City
 							</label>
 							<input
@@ -67,7 +67,7 @@ const Contact = () => {
 							</div>
 						</div>
 						<div className="col-md-3 py-2">
-							<label for="validationCustom04" className="form-label">
+							<label htmlFor="validationCustom04" className="form-label">
 								State
 							</label>
 							<select
@@ -75,7 +75,7 @@ const Contact = () => {
 								id="validationCustom04"
 								required
 							>
-								<option selected disabled value="">
+								<option defaultValue disabled value="">
 									Choose City
 								</option>
 								<option>New York</option>
@@ -87,7 +87,7 @@ const Contact = () => {
 							</div>
 						</div>
 						<div className="col-md-3 py-2">
-							<label for="validationCustom05" className="form-label">
+							<label htmlFor="validationCustom05" className="form-label">
 								Zip
 							</label>
 							<input
@@ -100,18 +100,18 @@ const Contact = () => {
 								Please provide a valid zip.
 							</div>
 						</div>
-						<div class="col-md-12 py-2">
-							<label for="exampleInputEmail1" class="form-label">
+						<div className="col-md-12 py-2">
+							<label htmlFor="exampleInputEmail1" className="form-label">
 								Email address
 							</label>
 							<input
 								type="email"
-								class="form-control"
+								className="form-control"
 								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 								required
 							/>
-							<div id="emailHelp" class="form-text">
+							<div id="emailHelp" className="form-text">
 								We'll never share your email with anyone else.
 							</div>
 						</div>
@@ -124,7 +124,7 @@ const Contact = () => {
 									id="invalidCheck"
 									required
 								/>
-								<label className="form-check-label" for="invalidCheck">
+								<label className="form-check-label" htmlFor="invalidCheck">
 									Agree to terms and conditions
 								</label>
 								<div className="invalid-feedback">

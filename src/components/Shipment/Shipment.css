@@ -1,0 +1,27 @@
+* {
+}
+.form {
+	margin-top: 30px;
+	height: 100vh;
+}
+.form input {
+	display: block;
+	border: none;
+	outline: none;
+	border-radius: 3px;
+	background-color: #e2e9f2bd;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+.form .error {
+	color: red;
+}
+.form input.shipment-submit {
+	background-color: rgb(117 130 219);
+	color: white;
+	transition: all 0.3s ease-in-out;
+}
+.form input.shipment-submit:hover {
+	background-color: rgb(78 98 232);
+}

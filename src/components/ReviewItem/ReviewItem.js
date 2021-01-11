@@ -30,8 +30,8 @@ const ReviewItem = (props) => {
 				{/* product features */}
 				<div className="features">
 					{features.length ? (
-						features.slice(0, 2).map((fe) => (
-							<p>
+						features.slice(0, 2).map((fe, index) => (
+							<p key={index}>
 								- {fe.description} {fe.value}
 							</p>
 						))

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import fakeData from "../../fakeData";
 import successfullImg from "../../images/success.png";
 import {
 	getDatabaseCart,
-	processOrder,
 	removeFromDatabaseCart,
 } from "../../utilities/databaseManager";
 import Cart from "../Cart/Cart";
@@ -13,10 +12,9 @@ const Review = () => {
 	const [cart, setCart] = useState([]);
 	const [orderPlaced, setOrderPlaced] = useState(false);
 
-	const handlPlaceOrder = () => {
-		setCart([]);
-		processOrder();
-		setOrderPlaced(true);
+	const history = useHistory();
+	const handleProceedCheckout = () => {
+		history.push("/shipment");
 	};
 
 	const removeProduct = (productKey) => {
@@ -85,13 +83,13 @@ const Review = () => {
 					<Link
 						onClick={() =>
 							cart.length
-								? handlPlaceOrder()
+								? handleProceedCheckout()
 								: alert("Add product before order")
 						}
 						className="review-btn order-btn"
 						// to="/order"
 					>
-						Place Order
+						Proceed Checkout
 					</Link>
 				</Cart>
 			</div>

@@ -42,14 +42,18 @@ const Product = (props) => {
 					<del className="rand-price"> {price + 100} </del>
 				</p>
 				<h3 className="pd-name">
-					<Link to={`/product/${key}`}>{name}</Link>
+					{props.showAddCart ? (
+						<Link to={`/product/${key}`}>{name}</Link>
+					) : (
+						name
+					)}
 				</h3>
 
 				{/* product features */}
 				<div className="features">
 					{features.length ? (
-						features.slice(0, 2).map((fe) => (
-							<p>
+						features.slice(0, 2).map((fe, index) => (
+							<p key={index}>
 								- {fe.description} {fe.value}
 							</p>
 						))

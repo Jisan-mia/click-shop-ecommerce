@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { UserContext } from "../../App";
 import logoImg from "../../images/success.png";
 import "./Header.css";
 const Header = () => {
@@ -7,6 +8,18 @@ const Header = () => {
 	const handleHamburger = () => {
 		setResonsive(!responsive);
 	};
+
+	const [loggenIndUser, setLoggedInUser] = useContext(UserContext);
+
+	let history = useHistory();
+	const handleLogIn = () => {
+		history.push("/login");
+	};
+
+	const handleLogOut = () => {
+		setLoggedInUser({});
+	};
+
 	return (
 		<div className="">
 			<nav>
@@ -16,10 +29,10 @@ const Header = () => {
 						<span>E-SHOP</span>
 					</div>
 
-					<div onClick={handleHamburger} class="hamburger">
-						<span class="bar"></span>
-						<span class="bar"></span>
-						<span class="bar"></span>
+					<div onClick={handleHamburger} className="hamburger">
+						<span className="bar"></span>
+						<span className="bar"></span>
+						<span className="bar"></span>
 					</div>
 
 					<ul className={responsive ? "nav-list" : "nav-list open"}>
@@ -35,7 +48,15 @@ const Header = () => {
 						<li className="nav-list-items">
 							<Link to="/contact">Contact</Link>
 						</li>
-						<button class="btn login-btn">Login</button>
+						{loggenIndUser.email ? (
+							<button onClick={handleLogOut} className="btn login-btn">
+								Logout
+							</button>
+						) : (
+							<button onClick={handleLogIn} className="btn login-btn">
+								Login
+							</button>
+						)}
 					</ul>
 				</div>
 			</nav>
